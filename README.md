@@ -47,3 +47,31 @@ modalwindow.load();
 ```
 
 Como vemos estamos creando una ventana modal a partir de la página "modal1.html", le estamos pasando como parámetro a dicha ventana modal el valor "dato a enviar" y hemos creado una función anónima para saber cuando se ha cerrado la ventana.
+
+La función de callback que se llama cuando se cierra la ventana tiene dos argumentos:
+  * success: Booleano que valdrá `true` si la ventana se cerró con el botón "Aceptar" o false si se cerró con el botón "Cancelar" o el aspa de la ventana.
+  * returnValue: En caso de que la ventana retorne `true` , este argumento contendrá la información que quiere devolver la ventana modal a la ventana original.
+
+Desde la ventana modal deberemos incluir el siguiente código JavaScript
+```
+$(function() {
+    var currentModalWindow=ModalWindow.getCurrent();
+    alert("La ventana que nos llamó nos pasó el valor:\n"+currentModalWindow.getParam());
+
+    currentModalWindow.show({
+        title:"Título de la ventana modal1.html con id="+Math.random(),
+        width:600,
+        height:200
+    });
+
+
+    jQuery("#btnAceptar").on("click",function() {
+        currentModalWindow.close(true,$("#returnValue").val());
+    })
+    jQuery("#btnCancelar").on("click",function() {
+        currentModalWindow.close(false);
+    })
+
+})
+```
+
