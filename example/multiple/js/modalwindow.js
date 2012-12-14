@@ -82,6 +82,7 @@ ModalWindow.prototype.load=function() {
  * La lista de obciones son las incluida en el Widget de JQuery UI Dialog. {@link http://api.jqueryui.com/dialog/}
  */
 ModalWindow.prototype.show=function(options) {
+	this.widget.dialog( "option", "position",{ my: "center center", at: "center center" } );    
     this.widget.dialog( "option", options);
     this.widget.dialog( "open" );
     var iframe=this._getIFrame();
