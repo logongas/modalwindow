@@ -25,3 +25,25 @@ Las desventajas de usar un div como ventana modal son:
 Todos estas desventajas pueden mas o menos solucionarse pero aun así resulta un engorro el hacerlo.
 
 Si tenemos dos páginas HTML independientes como documento original y como ventana modal se solucionan todas las desventajas anteriores aunque se generan nuevos problemas:
+  * Desde una ventana modal si lanzamos otra, se queda *dentro* de ella
+  * Desde la ventana modal es complejo compartir datos JavaScript con el documento original.
+  * Desde un iframe hay controles que no funcionan correctamente.
+
+Para solucionar los 2 primeros problemas se ha creado éste proyecto.
+
+Documentación
+=============
+
+Para usar la ventana modal deberemos crear un objeto ModalWindow y llamar a su método "load".
+```
+var modalwindow=new ModalWindow("modal1.html","dato a enviar",function(success,returnValue) {
+  if (success==true) {
+      alert("La ventana se cerró con el botón de Aceptar y retornó el valor de \n"+returnValue);
+  } else {
+      alert("La ventana se cerró con el botón de Cancelar");
+  }
+});
+modalwindow.load();
+```
+
+Como vemos estamos creando una ventana modal a partir de la página "modal1.html", le estamos pasando como parámetro a dicha ventana modal el valor "dato a enviar" y hemos creado una función anónima para saber cuando se ha cerrado la ventana.
