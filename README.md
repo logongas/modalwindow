@@ -35,7 +35,7 @@ Documentación
 -------------
 
 Para usar la ventana modal deberemos crear un objeto ModalWindow y llamar a su método "load".
-```
+```javascript
 var modalwindow=new ModalWindow("modal1.html","dato a enviar",function(success,returnValue) {
   if (success==true) {
       alert("La ventana se cerró con el botón de Aceptar y retornó el valor de \n"+returnValue);
@@ -53,7 +53,7 @@ La función de callback que se llama cuando se cierra la ventana tiene dos argum
   * returnValue: En caso de que la ventana retorne `true` , este argumento contendrá la información que quiere devolver la ventana modal a la ventana original.
 
 Desde la ventana modal deberemos incluir el siguiente código JavaScript
-```
+```javascript
 $(function() {
     var currentModalWindow=ModalWindow.getCurrent();
     alert("La ventana que nos llamó nos pasó el valor:\n"+currentModalWindow.getParam());
