@@ -95,7 +95,7 @@ En caso de tener una versión personalizada de [jQuery UI](http://jqueryui.com/)
 Instalación
 -----------
 Para funcionar la ventana modal deberemos cargar el fichero JavsScript `Modalwindow.js` junto a [jQuery](http://jquery.com/) y [jQuery UI](http://jqueryui.com/)
-```
+```html
 <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
 <script type="text/javascript" src="js/jquery-ui-1.9.2.js"></script>  
 <script type="text/javascript" src="js/modalwindow.js"></script>  
