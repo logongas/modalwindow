@@ -84,3 +84,21 @@ Obtenemos la información de nuestra ventana modal usando el método `ModalWindo
     * success: Booleano para indicar si la ventana ventana modal se cierra con el botón *Aceptar* o *Cancelar*. La aplicación es la responsable de decidir cuando retornar un valor u otro. 
     * returnValue: Es el valor que queremos devolver a la ventana que nos llamó.
 
+Requerimientos
+==============
+ModalWindow necesita de [jQuery](http://jquery.com/) y [jQuery UI](http://jqueryui.com/) para funcionar.
+En caso de tener una versión personalizada de [jQuery UI](http://jqueryui.com/) será necesario que esté incluido al menos lo siguiente:
+  * Interacción *"Draggable"*
+  * Widget *"Dialog"*
+  * Core *"Position"*
+
+Instalación
+==============
+Para funcionar la ventana modal deberemos cargar el fichero JavsScript `Modalwindow.js` junto a [jQuery](http://jquery.com/) y [jQuery UI](http://jqueryui.com/)
+```
+<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.9.2.js"></script>  
+<script type="text/javascript" src="js/modalwindow.js"></script>  
+```
+
+Tambien será necesario incluir el tema de [jQuery UI](http://jqueryui.com/) cargando el css correspondiente.
