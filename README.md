@@ -66,7 +66,7 @@ $(function() {
 
 
     jQuery("#btnAceptar").on("click",function() {
-        currentModalWindow.close(true,$("#returnValue").val());
+        currentModalWindow.close(true,"Valor a retornar a la ventana que nos llamó");
     })
     jQuery("#btnCancelar").on("click",function() {
         currentModalWindow.close(false);
@@ -74,4 +74,13 @@ $(function() {
 
 })
 ```
+
+Obtenemos la información de nuestra ventana modal usando el método `ModalWindow.getCurrent()` una vez tenemos la variable a la ventana modal usaremos los siguiente métodos:
+  * show: Se debe llamar en el evento "onload" de la página para que se muestre la ventana modal. Le pasaremos un objeto con las siguientes propiedades:
+    * title: String con el título de la ventana modal
+    * width: Entero con el ancho de la ventana modal
+    * height: Entero con el alto de la ventana modal.
+  * close: Se llamará para cerrar la ventana modal. Este método tiene 2 argumentos:
+    * success: Booleano para indicar si la ventana ventana modal se cierra con el botón *Aceptar* o *Cancelar*. La aplicación es la responsable de decidir cuando retornar un valor u otro. 
+    * returnValue: Es el valor que queremos devolver a la ventana que nos llamó.
 
